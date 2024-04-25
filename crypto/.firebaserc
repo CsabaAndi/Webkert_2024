@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cryptokert"
+  },
+  "targets": {
+    "cryptokert": {
+      "hosting": {
+        "crypto": [
+          "cryptokert"
+        ]
+      }
+    }
+  }
+}
