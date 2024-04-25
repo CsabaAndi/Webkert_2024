@@ -7,23 +7,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
-
-
-const firebaseConfig = {
-
-  apiKey: "AIzaSyCtjwj8P27rT7tSRk03FzvuazdwCLFvcWw",
-
-  authDomain: "cryptokert.firebaseapp.com",
-
-  projectId: "cryptokert",
-
-  storageBucket: "cryptokert.appspot.com",
-
-  messagingSenderId: "905908001588",
-
-  appId: "1:905908001588:web:1ea56456eeb37151d62361"
-
-};
+import { environment } from '../environments/environment.development';
 
 
 
@@ -34,7 +18,7 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirebaseApp(() => initializeApp(environment)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
