@@ -1,0 +1,45 @@
+@mixin sm {
+
+    @media only screen and (min-width: 600px){
+        @content; // projected content will be embedded here
+    }
+
+}
+
+
+h1 {text-align: center;}
+
+.reg_component {
+    display: grid;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.reg_buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    
+}
+
+.forms {
+    display: grid;
+    margin-top: 0px;
+
+    width: 350px;
+        
+    @include sm {
+        width: 500px;
+    }
+}
+
+.subform {
+    display: grid;
+    gap: 10px;
+
+    width: 350px;
+        
+    @include sm {
+        width: 500px;
+    }
+}

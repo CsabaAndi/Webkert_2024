@@ -1,0 +1,40 @@
+<div class="reg_component">
+    <div class="">
+        <h1>Regisztrációs adatlap</h1>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="forms">
+            <h2>Teljes Név:</h2>
+            <div formGroupName="name" class="subform">
+                <mat-form-field>
+                    <mat-label for="firstname">First name: </mat-label>
+                    <input matInput type="text" formControlName="firstname" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label for="firstname">Last name: </mat-label>
+                    <input matInput type="text" formControlName="lastname" />
+                </mat-form-field>
+            </div>
+            <h2>Minta: example&#64;email.com</h2>
+            <mat-form-field>
+                <mat-label for="email">Email: </mat-label>
+                <input matInput type="text" formControlName="email" />
+            </mat-form-field>
+            <h2>Jelszó:</h2>
+            <mat-form-field>
+                <mat-label for="password">Password: </mat-label>
+                <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+            <h2>Jelszó újra:</h2>
+            <mat-form-field>
+                <mat-label for="rePassword">Confirm password: </mat-label>
+                <input matInput type="password" formControlName="rePassword" />
+            </mat-form-field>
+            
+            <div>
+                <span class="reg_buttons">
+                    <button mat-raised-button color="primary" type="submit">Regisztráció</button>
+                    <button mat-raised-button  color="primary" routerLink="/login">Vissza</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

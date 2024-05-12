@@ -6,7 +6,7 @@ import { LiveComponent } from '../live/live.component';
 
 
 @NgModule({
-  declarations: [LiveComponent],
+  declarations: [/*LiveComponent*/],
   imports: [
     CommonModule,
     LiveRoutingModule

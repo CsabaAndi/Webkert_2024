@@ -1,0 +1,50 @@
+@mixin sm {
+
+    @media only screen and (min-width: 600px){
+        @content; // projected content will be embedded here
+    }
+
+}
+
+h1 {text-align: center;}
+
+.vack {
+    display: grid;
+    justify-content: center;
+}
+
+.login_component {
+    display: grid;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.login_email_input {
+    width: 200px;
+    margin-top: 50px;
+
+    width: 350px;
+        
+    @include sm {
+        min-width: 100%;
+    }
+}
+
+.login_pass_input{
+    width: 200px;
+    margin-top: 20px;
+
+    width: 350px;
+        
+    @include sm {
+        width: 500px;
+    }
+}
+
+.log_buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    
+}
+
