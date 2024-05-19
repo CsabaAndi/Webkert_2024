@@ -1,6 +1,3 @@
-<app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page"></app-menu>
-<!--<app-main *ngIf="page === 'main'"></app-main>
-<app-live *ngIf="page === 'live'"></app-live>-->
-
-
+<app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="(page === 'main' || page === 'live' || page === 'dashboard')"></app-menu>
 <router-outlet />
+

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
-import { User } from '../../shared/models/UserTest';
+import { User } from '../../shared/models/UserModel';
 import { UserDAOService } from '../../shared/services/user-dao.service';
 
 @Component({

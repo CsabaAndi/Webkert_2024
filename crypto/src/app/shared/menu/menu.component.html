@@ -1,12 +1,20 @@
-<mat-nav-list>
+<mat-nav-list class="nav">
     <a mat-list-item routerLink="/main" (click)="close()">
-        <mat-icon>main</mat-icon>
-        <span>Main</span>
+        <mat-icon></mat-icon>
+        <span>Főoldal</span>
     </a>
     <a mat-list-item routerLink="/live" (click)="close()">
-        <mat-icon>live</mat-icon>
-        <span>Live</span>
+        <mat-icon></mat-icon>
+        <span>Crypto</span>
     </a>
+    <a mat-list-item routerLink="/dashboard" (click)="close()" class="das">
+        <mat-icon></mat-icon>
+        <span>Felhasználó</span>
+    </a>
+    <button mat-raised-button color="warn" (click)="logout()">Kilépés</button>
+    <!-- <button (click)="callScriptApi()">
+        testscript
+    </button> -->
 </mat-nav-list>
 
 

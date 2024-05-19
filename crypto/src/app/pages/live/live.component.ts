@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { EmpData, Employee } from '../../shared/models/EmployeeTest';
-import { UserData, User } from '../../shared/models/UserTest';
-import { keksz } from '../../scripts/api-test';
-
+import { getData } from '../../scripts/api-test';
+import { Exchange } from '../../shared/models/CryptoExchange';
 
 @Component({
   selector: 'app-live',
@@ -15,20 +13,30 @@ import { keksz } from '../../scripts/api-test';
 
 export class LiveComponent implements OnInit {
 
-  displayedColumns: string[] = ["Id", "FirstName", "LastName", "Email", "Gender", "JobTitle"];
-  dataSource: MatTableDataSource<Employee>
+  displayedColumns3: string[] = ["From", "To", "Rate"];
+  dataSource3 = new MatTableDataSource<Exchange>;
+  private _crydata:  Exchange[] = [];
 
-  displayedColumns2: string[] = ["Id", "Firstname", "Lastname", "Email", "Level"];
-  dataSource2: MatTableDataSource<User>
+  loading: boolean = false;
+
 
   constructor() { 
-    this.dataSource = new MatTableDataSource<Employee>(EmpData);
-    this.dataSource2 = new MatTableDataSource<User>(UserData);
+    this.loading = true;
+    getData(50).then(data => {
+      data.forEach((element: any, CryptoExchange: Exchange) => {
+        CryptoExchange = {"From": element.currency_from, "To": element.currency_to, "Rate": element.rate}
+        this._crydata.push(CryptoExchange)
+      })
+      //console.log(this.crydata)
+      this.loading = false;
+      this.dataSource3 = new MatTableDataSource<Exchange>(this._crydata);
+    });
+
   }
 
   ngOnInit(): void {
-    console.log(keksz())
+   
   }
-
+  
 }
 

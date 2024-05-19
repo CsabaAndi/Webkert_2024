@@ -1,5 +1,37 @@
+@mixin sm {
+
+    @media only screen and (min-width: 600px){
+        @content; // projected content will be embedded here
+    }
+
+}
+
+
 span:hover, span:active {
     color: red;
 }
 
-span { color: black;}
+span { 
+    color: black;
+    font-size: x-small;
+
+    @include sm {
+        font-size: large;
+    }
+}
+
+.nav{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 0px;
+    background-color: grey;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+button {
+    padding: 23.7px;
+}
+

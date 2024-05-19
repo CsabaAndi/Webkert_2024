@@ -1,4 +1,7 @@
 import { Component, OnInit, AfterViewInit, EventEmitter, Output, Input} from '@angular/core';
+import { AuthService } from '../../shared/services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -13,16 +16,12 @@ export class MenuComponent implements OnInit, AfterViewInit {
   @Output() selectedPage: EventEmitter<string> = new EventEmitter();
   @Output() onCloseSidenav: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {
-    console.log('constructor called.');
-  }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
-    console.log('ngOnInit called.');
   }
 
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit called.');
   }
 
   menuSwitch() {
@@ -36,5 +35,13 @@ export class MenuComponent implements OnInit, AfterViewInit {
       this.onLogout.emit(logout);
     }
     */
+  }
+
+  logout() {
+    this.authService.logout().then(() => {
+      this.router.navigateByUrl('/login');
+    }).catch(error => {
+      console.error(error);
+    });
   }
 }

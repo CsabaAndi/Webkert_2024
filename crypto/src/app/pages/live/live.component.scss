@@ -1,0 +1,38 @@
+@mixin sm {
+
+    @media only screen and (min-width: 600px){
+        @content; // projected content will be embedded here
+    }
+
+}
+
+th {
+    border-bottom: 5;
+    border-color: red;
+}
+
+.mat-column-Rate {
+    width: 30% !important;
+}
+
+.test { 
+    width: 100%;
+    overflow: auto;
+
+    @include sm {
+        width: 60%;
+        margin-left: 20%; 
+        margin-top: 50px;
+    }
+
+}
+
+.live_loading_spinner{
+    display: grid;
+    justify-content: center;
+    margin-top: 100px;
+}
+  
+
+
+

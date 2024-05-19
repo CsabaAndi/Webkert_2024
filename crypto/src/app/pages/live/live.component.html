@@ -1,81 +1,29 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+<div class="test">
+  <table mat-table [dataSource]="dataSource3" class="what">
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="Id">
-    <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
-  </ng-container>
+    <ng-container matColumnDef="From">
+      <th mat-header-cell *matHeaderCellDef> From </th>
+      <td mat-cell *matCellDef="let element"> {{element.From}} </td>
+    </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="FirstName">
-    <th mat-header-cell *matHeaderCellDef> FirstName </th>
-    <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
-  </ng-container>
+    <ng-container matColumnDef="To">
+      <th mat-header-cell *matHeaderCellDef> To </th>
+      <td mat-cell *matCellDef="let element"> {{element.To}} </td>
+    </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="LastName">
-    <th mat-header-cell *matHeaderCellDef> LastName </th>
-    <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
-  </ng-container>
+    <ng-container matColumnDef="Rate">
+      <th mat-header-cell *matHeaderCellDef> Rate </th>
+      <td mat-cell *matCellDef="let element"> {{element.Rate}} </td>
+    </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="Email">
-    <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
-  </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
+  </table>
+  <div class="live_loading_spinner" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
 
-  <ng-container matColumnDef="Gender">
-    <th mat-header-cell *matHeaderCellDef> Gender </th>
-    <td mat-cell *matCellDef="let element"> {{element.Gender}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="JobTitle">
-    <th mat-header-cell *matHeaderCellDef> JobTitle </th>
-    <td mat-cell *matCellDef="let element"> {{element.JobTitle}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-<table mat-table [dataSource]="dataSource2" class="mat-elevation-z10 what">
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
-  <ng-container matColumnDef="Id">
-    <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="Firstname">
-    <th mat-header-cell *matHeaderCellDef> Firstname1</th>
-    <td mat-cell *matCellDef="let element"> {{element.Firstname}} </td>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container matColumnDef="Lastname">
-    <th mat-header-cell *matHeaderCellDef> Lastname </th>
-    <td mat-cell *matCellDef="let element"> {{element.Lastname}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="Email">
-    <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Level">
-    <th mat-header-cell *matHeaderCellDef> Level </th>
-    <td mat-cell *matCellDef="let element"> {{element.Level}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
-</table>
 
 
 

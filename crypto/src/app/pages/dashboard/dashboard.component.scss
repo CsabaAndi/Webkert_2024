@@ -1,0 +1,20 @@
+@mixin sm {
+
+    @media only screen and (min-width: 600px){
+        @content; // projected content will be embedded here
+    }
+
+}
+
+
+h1 {text-align: center; margin-bottom: 20px;}
+
+.das {
+    display: grid;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.del {display: flex; gap: 10px; margin-top: 20px;}
+
+
